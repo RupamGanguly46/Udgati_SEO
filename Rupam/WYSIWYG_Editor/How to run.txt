@@ -1,0 +1,27 @@
+cd WYSIWYG_Editor
+npm install
+# start dev server (default http://localhost:3000)
+npm start
+
+For react_backend
+cd WYSIWYG_Editor\server\react_backend
+npm install
+# start server (listens on port 5000)
+npm start
+
+For fastapi_backend
+python -m venv .venv
+cd WYSIWYG_Editor\server\fastapi_backend
+
+
+
+# activate the venv (PowerShell)
+.\.venv\Scripts\Activate.ps1
+
+# upgrade pip and install required packages
+python -m pip install --upgrade pip
+pip install fastapi uvicorn[standard] httpx beautifulsoup4
+
+# run the FastAPI app on port 5000
+# the module is main.py exposing `app`, so:
+uvicorn main:app --reload --host 0.0.0.0 --port 5000
